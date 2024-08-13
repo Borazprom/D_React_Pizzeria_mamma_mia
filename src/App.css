@@ -17,9 +17,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
-    background-image: url(/src/assets/img/food-and-drink-pizza-pizzas-tomato.jpg);
+    background-image: url(/src/assets/img/register.jpeg);
     background-size: cover;
+    height: 780px;
    }
    .cards{
       display: flex;
@@ -37,10 +37,56 @@
   } 
   .footer{
       text-align: center;
-      padding: 32px;
+      padding: 24px;
       background-color: rgb(25, 156, 25);
       font-weight: 500;
-      position: absolute;
+      position: fixed;
       bottom: 0;
       width: 100%;
   }
+  .error {
+    margin-top: 16px;
+    padding: 10px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    }
+    .validar{
+    margin-top: 16px;
+    padding: 10px;
+    color: white;
+    background-color: green;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    }
+    .errorLength{
+    margin-top: 16px;
+    padding: 10px;
+    color: white;
+    background-color: green;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    }
+   .validPassword{
+    color: white;
+    text-align: center;
+   }
+   .mainLogin{
+    background-image: url(/src/assets/img/register.jpeg);
+    background-size: cover;
+    height: 780px;
+    color: white;
+   }
+   .formulario{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+    margin-left: 150px;
+    padding-top: 60px;
+ 
+   }
