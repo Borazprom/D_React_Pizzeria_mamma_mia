@@ -12,6 +12,15 @@
       color: white;
       
    }
+   .mainFormulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    background-image: url(/src/assets/img/food-and-drink-pizza-pizzas-tomato.jpg);
+    background-size: cover;
+   }
    .cards{
       display: flex;
       justify-content: center;
@@ -31,4 +40,7 @@
       padding: 32px;
       background-color: rgb(25, 156, 25);
       font-weight: 500;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
   }
