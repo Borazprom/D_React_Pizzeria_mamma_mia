@@ -34,6 +34,7 @@ const validarLogin = (e) => {
             type="email"
             name="email"
             className="form-control"
+            placeholder='Ingrese su Email'
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             />
@@ -45,12 +46,13 @@ const validarLogin = (e) => {
             type="password"
             name="contraseña"
             className="form-control"
+            placeholder='Ingrese su contraseña'
             onChange={(e) => setContraseña(e.target.value)}
             value={contraseña}
             />
         </div>
-        {errorLogin ? <p>Todos los campos son obligatorios</p> : null}
-        {exitoLogin ? <p>Ha ingresado con exito</p> : null}
+        {errorLogin ? <p className='errorLogin'>Todos los campos son obligatorios</p> : null}
+        {exitoLogin ? <p className='exitoLogin'>Ha ingresado con exito</p> : null}
         <button type='submit' className='btn btn-success m-3'>Enviar</button>
       </form>
     </div>

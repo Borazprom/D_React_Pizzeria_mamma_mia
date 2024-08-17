@@ -8,24 +8,24 @@ const [repeatPassword, setRepeatPassword] = useState('')
 
 // Estados de los errores
 const [error, setError] = useState(false)
-// const [errorLength, setErrorLength] = useState(false)
+const [errorLength, setErrorLength] = useState(false)
 const [validPassword, setValidPassword] = useState(false)
 
 // Estados de los exitos 
 const [validar, setValidar] = useState(false)
 
-const errorLength = () => {
-    password = password.length(6)
-}
+// const errorLength = () => {
+//     password = password.length(6)
+// }
 
 const validarIngreso = (e) => {
     e.preventDefault()
 
     if(email === '' || password === '' || repeatPassword === ''){
         setError(true)
-        setValidar(false)
-        setValidPassword(false)
-        
+        // setValidar(false)
+        // setValidPassword(false)
+        // setErrorLength(false)
         return
     }else {
         setError(false)
@@ -35,13 +35,23 @@ const validarIngreso = (e) => {
         return
     }else{
         setValidPassword(false)
-    } if (nombre && email && password && repeatPassword){
+    } 
+    // if (errorLength != length(6)){
+    //     setErrorLength (true)
+    //     return
+    // }else {
+    //     setErrorLength(false)
+    // }
+    if(email && password && repeatPassword){
         setValidar(true)
-        setError(false)
-        setValidPassword(false)
+        // setError(false)
+        // setValidPassword(false)
+        // setErrorLength(false)
         setEmail('')
         setPassword('')
         setRepeatPassword('')
+    }else {
+        setValidar(false)
     }
 }
   return (

@@ -90,3 +90,17 @@
     padding-top: 60px;
  
    }
+   .errorLogin{
+    background-color: red;
+    margin-top: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+   }
+   .exitoLogin{
+    background-color: green;
+    margin-top: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+   }
