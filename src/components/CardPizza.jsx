@@ -12,8 +12,12 @@ const CardPizza = ({key, description, img, ingredients, name, price}) => {
             <Card.Body>
                 <Card.Title className="name">{name}</Card.Title>
                 <Card.Text className='description'>{description}</Card.Text>
-                <Card.Text className="subIngredientes">Ingredientes:</Card.Text>
-                <Card.Text className="ingredients">🍕{ingredients}</Card.Text>
+                <Card.Text className="subIngredientes">🍕 Ingredientes:</Card.Text>
+                <Card.Text className="ingredients">
+                    {ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient}</li>
+                    ))}
+                </Card.Text>
                 <Card.Text className='price'>Precio: ${number(price)}</Card.Text>                 
             </Card.Body>
             <CardFooter className='cardFooter'>

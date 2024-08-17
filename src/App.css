@@ -21,29 +21,28 @@
     background-size: cover;
     height: 780px;
    }
-   .cards{
+   /* .cards{
       display: flex;
       justify-content: center;
       margin: 20px;
       border: solid 5px green;
       gap: 32px;
       margin-top: 40px;
-   }
+   } */
    .card {
       margin: 5px;
       margin-bottom: 30px;
-      height: 650px;
+      height: auto;
   
   } 
-  .footer{
-      text-align: center;
-      padding: 24px;
+ .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
       background-color: rgb(25, 156, 25);
       font-weight: 500;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-  }
+  } 
   .error {
     margin-top: 16px;
     padding: 10px;
