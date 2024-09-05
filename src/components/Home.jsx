@@ -2,10 +2,9 @@ import React, { useState,} from 'react'
 import Header from './Header'
 import CardPizza from './CardPizza'
 import { pizzas } from '../utils/pizzas'
-import { Button } from 'react-bootstrap'
 
 
-const Home = ({showHome, agregarCart}) => {
+const Home = ({agregarPizza}) => {
 
   return (
     <div>
@@ -13,7 +12,6 @@ const Home = ({showHome, agregarCart}) => {
             <Header  title="¡Pizzeria Mamma Mía!" 
                         description="¡Tenemos las mejores pizzas que podras encontrar!"/>
         </div>
-        <Button onClick={showHome} style={{width:'300px', margin:'20px 45% 0 45%'}} variant="success">Ir al carrito</Button>
         <div className='pizzas'>
             {pizzas.map(pizza =>(
             <CardPizza
@@ -23,7 +21,7 @@ const Home = ({showHome, agregarCart}) => {
             ingredients={pizza.ingredients}
             name={pizza.name}
             price={pizza.price}
-            agregarCart={agregarCart}
+            agregarPizza={agregarPizza}
             />
         ))}
         </div>

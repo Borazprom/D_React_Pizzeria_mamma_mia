@@ -96,3 +96,16 @@
     border-radius: 5px;
     text-align: center;
    }
+   .headerCart{
+    height: 150px;
+    text-align: center;
+   }
+   .pizzaCart{
+    display: flex;
+    gap: 5px;
+
+   }
+   .cart{
+    display: flex;
+    
+   }

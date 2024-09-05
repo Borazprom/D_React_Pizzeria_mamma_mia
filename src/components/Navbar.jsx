@@ -36,7 +36,7 @@ const Navbar = () => {
                         <li class="nav-item">{token == false ? <a class="nav-link active m-1" href="#">Register</a> : null}</li> */}
                    
                     </div>
-                    <a class="nav-link active me-4 btn bg-dark p-2 text-white" aria-current="page" href="#">🛒Total: ${number(total)}</a>
+                    <a class="nav-link active me-4 btn bg-dark p-2 text-white" aria-current="page" href="./Cart.jsx">🛒Total: ${number(total)}</a>
                 </div>
             </div>
         </nav>

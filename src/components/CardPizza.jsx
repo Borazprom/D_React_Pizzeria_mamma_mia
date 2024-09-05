@@ -4,7 +4,7 @@ import Card  from 'react-bootstrap/Card'
 import { number } from '../utils/number'
 
 
-const CardPizza = ({description, img, ingredients, name, price, agregarCart}) => {
+const CardPizza = ({id, description, img, ingredients, name, price, agregarPizza, pizza}) => {
   return (
     <>
       <Card style={{ width: '500px', marginTop:'16px' }} className="card">
@@ -22,7 +22,7 @@ const CardPizza = ({description, img, ingredients, name, price, agregarCart}) =>
             </Card.Body>
             <CardFooter className='cardFooter'>
             <Button  variant="outline-success">Ver mas</Button>
-            <Button onClick={agregarCart()}  variant="success">Añadir</Button>
+            <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
             </CardFooter>
         </Card>
     </>
