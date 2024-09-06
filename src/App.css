@@ -100,12 +100,28 @@
     height: 150px;
     text-align: center;
    }
-   .pizzaCart{
-    display: flex;
-    gap: 5px;
-
-   }
    .cart{
-    display: flex;
-    
+    text-align: center;
+    margin-top: 50px;
+   } 
+   .titleCart{
+    text-align: center;
    }
+   .cartItems{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   }
+   .cartItem{
+    border: solid 1px green;
+    font-size: 16px;
+    padding: 8px;
+   }
+.namePizzaCart{
+    font-size: 14px;
+} 
+.buttonCart{
+    background-color: green;
+    border: 0px;
+    margin: 1px;
+}

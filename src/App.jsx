@@ -43,7 +43,7 @@ const agregarPizza = (pizza) => {
         if (pizza.cant === 1) {
             eliminarDelCart(pizza.id)
         }else {
-            cart.map(item => item.id === producto.id ?
+            cart.map(item => item.id === pizza.id ?
             {...item, cant: item.cant - 1} : item
             )
         }

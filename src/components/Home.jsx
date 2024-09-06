@@ -16,11 +16,7 @@ const Home = ({agregarPizza}) => {
             {pizzas.map(pizza =>(
             <CardPizza
             key={pizza.id}
-            description={pizza.desc}
-            img={pizza.img}
-            ingredients={pizza.ingredients}
-            name={pizza.name}
-            price={pizza.price}
+            pizza={pizza}
             agregarPizza={agregarPizza}
             />
         ))}
