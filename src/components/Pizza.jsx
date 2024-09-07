@@ -18,16 +18,16 @@ const Pizza = () => {
     
   return (
 
-        <div className="card" style={{width: '600px', height: '100%'}}>
+        <div className="card" style={{width: '550px', margin: '8px 0 0 35%'}}>
             <img src={pizza.img} className="card-img-top"  alt={pizza.name}/>
             <div className="card-body">
-              <h5 className="card-title" style={{fontSize: '40px'}}>{pizza.name}</h5>
+              <h5 className="card-title" style={{fontSize:'30px'}}>{pizza.name}</h5>
               <p className="card-text" >{pizza.desc}</p>
-              <p className="card-text" style={{textAlign: 'center'}}>{pizza.ingredients.map((ingredient, index) => (
+              <p className="card-text" style={{textAlign:'center'}}>{pizza.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
                     ))}</p>
-              <p className="card-text" style={{fontSize: '30px'}}>{pizza.price}</p>
-              <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
+              <p className="card-text" style={{textAlign:'center', fontSize:'30px'}}>${pizza.price}</p>
+              <Button onClick={() => agregarPizza(pizza)}  variant="success" style={{marginLeft:'45%'}}>Añadir</Button>
             </div>
         </div>
 

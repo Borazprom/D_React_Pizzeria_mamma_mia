@@ -22,21 +22,15 @@
     background-size: cover;
     height: 780px;
    }
+   /* Container Pizzas */
 .pizzas{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
-
- .footer{
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(25, 156, 25);
-    font-weight: 500;
-    margin-top: 30px;
-  } 
-  .error {
+/* Estilos Mensajes */
+.error {
     margin-top: 16px;
     padding: 10px;
     color: white;
@@ -44,8 +38,8 @@
     text-align: center;
     font-weight: bold;
     border-radius: 10px;
-    }
-    .validar{
+}
+.validar{
     margin-top: 16px;
     padding: 10px;
     color: white;
@@ -54,7 +48,7 @@
     font-weight: bold;
     border-radius: 10px;
     }
-    .errorLength{
+.errorLength{
     margin-top: 16px;
     padding: 10px;
     color: white;
@@ -62,61 +56,67 @@
     text-align: center;
     font-weight: bold;
     border-radius: 10px;
-    }
-   .validPassword{
+}
+.validPassword{
     color: white;
     text-align: center;
    }
-   .mainLogin{
+
+   /* Login */
+.mainLogin{
     background-image: url(/src/assets/img/register.jpeg);
     background-size: cover;
     height: 780px;
     color: white;
-   }
-   .formulario{
-    display: flex;
-    flex-direction: column;
-    width: 500px;
+}
+
+/* Formulario */
+.formulario{
+       display: flex;
+       flex-direction: column;
+       width: 500px;
     justify-content: center;
     margin-left: 150px;
     padding-top: 60px;
- 
+    
    }
-   .errorLogin{
-    background-color: red;
+.errorLogin{
+       background-color: red;
     margin-top: 16px;
     padding: 5px;
     border-radius: 5px;
     text-align: center;
-   }
-   .exitoLogin{
+}
+.exitoLogin{
     background-color: green;
     margin-top: 16px;
     padding: 5px;
     border-radius: 5px;
     text-align: center;
    }
-   .headerCart{
+
+   /* Carrito de compras */
+.headerCart{
     height: 150px;
     text-align: center;
-   }
-   .cart{
+}
+.cart{
     text-align: center;
     margin-top: 50px;
-   } 
-   .titleCart{
+} 
+.titleCart{
     text-align: center;
-   }
-   .cartItems{
+}
+.cartItems{
     display: flex;
     justify-content: center;
     gap: 10px;
-   }
-   .cartItem{
+}
+.cartItem{
     border: solid 1px green;
     font-size: 16px;
     padding: 8px;
-   }
+}
 .namePizzaCart{
     font-size: 14px;
 } 
@@ -125,3 +125,12 @@
     border: 0px;
     margin: 1px;
 } 
+ 
+/* Footer */
+.footer{
+   text-align: center;
+   padding: 10px;
+   background-color: rgb(25, 156, 25);
+   font-weight: 500;
+   margin-top: 30px;
+}

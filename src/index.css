@@ -16,6 +16,8 @@
   .textHeader{
       margin-right: 10em;
   }
+
+  /* CardPizzas */
   .name{
       font-size: 40px;
       border-bottom: solid 1px rgb(169, 168, 168);
