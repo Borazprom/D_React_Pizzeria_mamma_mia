@@ -2,12 +2,15 @@ import './App.css'
 import './index.css'
 import { useState } from 'react';
 import Navbar from './components/Navbar';
-// import Home from './components/Home';
-// import Cart from './components/Cart';
-// import Register from './components/Register';
-// import Login from './components/Login';
-import Pizza from './components/Pizza';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Pizza from './pages/Pizza';
 import Footer from './components/Footer';
+import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -54,14 +57,18 @@ const agregarPizza = (pizza) => {
   return (
     <>
       <Navbar/>
-      {/* <Home agregarPizza={agregarPizza}/>
-      <Cart cart = {cart}
+      <Routes>
+        <Route path='/' element={<Home agregarPizza={agregarPizza}/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/cart' element={<Cart cart = {cart}
             eliminarDelCart={eliminarDelCart}
             aumentarDelCart={aumentarDelCart}
-            disminuirDelCart={disminuirDelCart}/> */}
-      {/* <Register/> */}
-      {/* <Login/> */}
-      <Pizza/>
+            disminuirDelCart={disminuirDelCart}/>} />
+        <Route path='/pizza/:id' element={<Pizza/>} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/*' element={<NotFound/>} />
+      </Routes>
       <Footer/>
     </>
   )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState,} from 'react'
-import Header from './Header'
-import CardPizza from './CardPizza'
+import Header from '../components/Header'
+import CardPizza from '../components/CardPizza'
+import { Routes,Route } from 'react-router-dom'
 // import { pizzas } from '../utils/pizzas'
 
 
@@ -22,8 +23,10 @@ const Home = ({agregarPizza}) => {
   return (
     <div>
         <div className='header'>
-            <Header  title="¡Pizzeria Mamma Mía!" 
+            
+            <Header title="¡Pizzeria Mamma Mía!" 
                         description="¡Tenemos las mejores pizzas que podras encontrar!"/>
+            
         </div>
         <div className='pizzas'>
             {pizzas.map(pizza =>(

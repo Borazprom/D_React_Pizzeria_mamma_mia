@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, CardFooter } from 'react-bootstrap'
 import Card  from 'react-bootstrap/Card'
 import { number } from '../utils/number'
+import { Link } from 'react-router-dom'
 
 
 const CardPizza = ({pizza, agregarPizza}) => {
@@ -21,7 +22,7 @@ const CardPizza = ({pizza, agregarPizza}) => {
                 <Card.Text className='price'>Precio: ${number(pizza.price)}</Card.Text>                 
             </Card.Body>
             <CardFooter className='cardFooter'>
-            <Button  variant="outline-success">Ver mas</Button>
+            <Button variant="outline-dark" ><Link to={`/pizza/${pizza.findIndex}`}></Link>Ver mas</Button>
             <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
             </CardFooter>
         </Card>

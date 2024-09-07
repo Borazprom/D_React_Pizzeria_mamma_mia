@@ -1,8 +1,6 @@
 import React from 'react'
 
 
-
-
 const Header = ({title, description}) => {
   return (
     <div className='header'>

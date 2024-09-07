@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
 // Estados de los input
@@ -91,6 +92,7 @@ const validarIngreso = (e) => {
             {errorLength ? <p className='errorLength'>La contraseña debe tener minimo 6 caracteres</p> : null}
             
         </form>
+        <p>Ya tienes una cuenta asociada<Link to='/login'>Iniciar sesion</Link></p>
     </div>
     </>
   )

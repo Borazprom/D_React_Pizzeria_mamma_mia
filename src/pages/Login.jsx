@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -55,6 +56,8 @@ const validarLogin = (e) => {
         {exitoLogin ? <p className='exitoLogin'>Ha ingresado con exito</p> : null}
         <button type='submit' className='btn btn-success m-3'>Enviar</button>
       </form>
+
+      <p>No tienes una cuenta <Link to='/register'>Registrate</Link></p>
     </div>
   )
 }
