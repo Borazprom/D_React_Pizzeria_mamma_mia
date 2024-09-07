@@ -22,7 +22,7 @@ const CardPizza = ({pizza, agregarPizza}) => {
                 <Card.Text className='price'>Precio: ${number(pizza.price)}</Card.Text>                 
             </Card.Body>
             <CardFooter className='cardFooter'>
-            <Button variant="outline-dark" ><Link to={`/pizza/${pizza.findIndex}`}></Link>Ver mas</Button>
+            <Button variant="outline-dark" ><Link to='/pizza'>Ver mas</Link></Button>
             <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
             </CardFooter>
         </Card>

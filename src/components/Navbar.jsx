@@ -31,18 +31,17 @@ const Navbar = () => {
               >
                 🍕Home
               </Link>
-              {/* <a class="nav-link active m-1 btn bg-dark text-white" aria-current="page" href="#">🍕Home</a> */}
               {token ? (
                 <>
-                  <Link to="/profile" className="nav-link active m-1">
-                    🔓Profile
-                  </Link>
-                  <Link to="/logout" className="nav-link active m-1">
+                  <Link to="/login" className="nav-link active m-1">
                     🔒Logout
                   </Link>
                 </>
               ) : (
                 <>
+                  <Link to="/profile" className="nav-link active m-1">
+                    🔓Profile
+                  </Link>
                   <Link to="/login" className="nav-link active m-1">
                     🔐Login
                   </Link>
