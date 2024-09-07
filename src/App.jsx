@@ -1,15 +1,14 @@
 import './App.css'
 import './index.css'
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import Cart from './components/Cart';
 import { useState } from 'react';
-import { pizzas } from './utils/pizzas';
-import Pizza from './components/Pizza';
-
+import Navbar from './components/Navbar';
+// import Home from './components/Home';
+// import Cart from './components/Cart';
 // import Register from './components/Register';
 // import Login from './components/Login';
+import Pizza from './components/Pizza';
+import Footer from './components/Footer';
+
 function App() {
 
 
@@ -55,11 +54,11 @@ const agregarPizza = (pizza) => {
   return (
     <>
       <Navbar/>
-      <Home agregarPizza={agregarPizza}/>
+      {/* <Home agregarPizza={agregarPizza}/>
       <Cart cart = {cart}
             eliminarDelCart={eliminarDelCart}
             aumentarDelCart={aumentarDelCart}
-            disminuirDelCart={disminuirDelCart}/>
+            disminuirDelCart={disminuirDelCart}/> */}
       {/* <Register/> */}
       {/* <Login/> */}
       <Pizza/>

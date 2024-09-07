@@ -7,7 +7,7 @@ import { number } from '../utils/number'
 const CardPizza = ({pizza, agregarPizza}) => {
   return (
     <>
-      <Card style={{ width: '500px', marginTop:'16px' }} className="card">
+      <Card key={pizza.id} style={{ width: '500px', marginTop:'16px' }} className="card">
             <Card.Img variant="top" src={pizza.img} className="img"/>
             <Card.Body>
                 <Card.Title className="name">{pizza.name}</Card.Title>
