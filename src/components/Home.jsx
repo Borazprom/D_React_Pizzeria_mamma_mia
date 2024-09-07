@@ -6,6 +6,8 @@ import { pizzas } from '../utils/pizzas'
 
 const Home = ({agregarPizza}) => {
 
+    
+
   return (
     <div>
         <div className='header'>

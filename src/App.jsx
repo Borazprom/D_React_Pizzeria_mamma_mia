@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Cart from './components/Cart';
 import { useState } from 'react';
 import { pizzas } from './utils/pizzas';
+import Pizza from './components/Pizza';
 
 // import Register from './components/Register';
 // import Login from './components/Login';
@@ -43,8 +44,10 @@ const agregarPizza = (pizza) => {
         if (pizza.cant === 1) {
             eliminarDelCart(pizza.id)
         }else {
-            cart.map(item => item.id === pizza.id ?
-            {...item, cant: item.cant - 1} : item
+            setCart(
+                cart.map(item => item.id === pizza.id ?
+                    {...item, cant: item.cant - 1} : item
+                )
             )
         }
     }
@@ -59,6 +62,7 @@ const agregarPizza = (pizza) => {
             disminuirDelCart={disminuirDelCart}/>
       {/* <Register/> */}
       {/* <Login/> */}
+      <Pizza/>
       <Footer/>
     </>
   )
