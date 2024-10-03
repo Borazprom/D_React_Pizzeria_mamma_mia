@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, CardFooter } from 'react-bootstrap'
 import Card  from 'react-bootstrap/Card'
 import { number } from '../utils/number'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
 
 
-const CardPizza = ({pizza, agregarPizza}) => {
+const CardPizza = ({pizza}) => {
+    const { agregarPizza } = useContext(CartContext)
   return (
     <>
       <Card key={pizza.id} style={{ width: '500px', marginTop:'16px' }} className="card">
@@ -22,7 +24,7 @@ const CardPizza = ({pizza, agregarPizza}) => {
                 <Card.Text className='price'>Precio: ${number(pizza.price)}</Card.Text>                 
             </Card.Body>
             <CardFooter className='cardFooter'>
-            <Button variant="outline-dark" ><Link to='/pizza'>Ver mas</Link></Button>
+            <Button variant="outline-dark" ><Link to="/pizza">Ver mas</Link></Button>
             <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
             </CardFooter>
         </Card>

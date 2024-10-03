@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
-const Cart = ({cart, eliminarDelCart, aumentarDelCart, disminuirDelCart}) => {
+const Cart = () => {
 
-    const totalGeneral = cart.reduce((acc, pizza) => acc + pizza.price * pizza.cant, 0)
+    const {cart, eliminarDelCart, aumentarPizza, disminuirPizza, total} = useContext(CartContext)
 
   return (
     <div className='cart'>
@@ -19,15 +20,15 @@ const Cart = ({cart, eliminarDelCart, aumentarDelCart, disminuirDelCart}) => {
                 <h3 className='namePizzaCart'>{pizza.name}</h3>
                 <p>${pizza.price}</p>
                 <p>Cantidad: {pizza.cant}</p>
-                <button className='buttonCart' onClick={() => disminuirDelCart(pizza)}> - </button>
-                <button className='buttonCart' onClick={() => aumentarDelCart(pizza)}> + </button>
+                <button className='buttonCart' onClick={() => disminuirPizza(pizza)}> - </button>
+                <button className='buttonCart' onClick={() => aumentarPizza(pizza)}> + </button>
                 <button className='buttonCart' onClick={() => eliminarDelCart(pizza.id)}>Eliminar</button>
                 <p>Total: ${pizza.price * pizza.cant}</p>
             </div>
             ))
         )}
         </div>
-        <h3>Total a pagar: ${totalGeneral}</h3>
+        <h3>Total a pagar: ${total}</h3>
     </div>
   )
 }

@@ -1,24 +1,12 @@
-import React, { useEffect, useState,} from 'react'
+import React, { useContext } from 'react'
 import Header from '../components/Header'
 import CardPizza from '../components/CardPizza'
-import { Routes,Route } from 'react-router-dom'
-// import { pizzas } from '../utils/pizzas'
+import { ApiContext } from '../context/ApiContext'
 
 
-const Home = ({agregarPizza}) => {
+const Home = () => {
 
-    const [pizzas, setPizzas] = useState([])
-
-    const info = async()=> {
-        const result = await fetch("http://localhost:5000/api/pizzas")
-        const data = await result.json()
-        setPizzas(data)
-    } 
-
-    useEffect(() => {
-        info()
-    },[])
-
+    const {pizzas} = useContext(ApiContext)
 
   return (
     <div>
@@ -33,7 +21,6 @@ const Home = ({agregarPizza}) => {
             <CardPizza
             key={pizza.id}
             pizza={pizza}
-            agregarPizza={agregarPizza}
             />
         ))}
         </div>
