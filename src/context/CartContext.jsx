@@ -16,6 +16,7 @@ const agregarPizza = (pizza) => {
             item.id === pizza.id ? {...item, cant: item.cant + 1 } : item))
     }else {
         setCart([...cart, {...pizza, cant:1}])
+        // alert("Se agrego correctamente")
     }
 }
     const eliminarDelCart = (id) => { 
@@ -37,7 +38,7 @@ const agregarPizza = (pizza) => {
                 )
             }
         }
-        
+
     //Calcular el total 
     useEffect (() => {
         const totalGeneral = cart.reduce((acc, pizza) => acc + pizza.price * pizza.cant, 0)

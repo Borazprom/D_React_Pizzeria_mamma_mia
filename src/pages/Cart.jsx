@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { UserContext } from '../context/UserContext'
 
 const Cart = () => {
 
     const {cart, eliminarDelCart, aumentarPizza, disminuirPizza, total} = useContext(CartContext)
+    const {user} = useContext(UserContext)
 
   return (
     <div className='cart'>
@@ -24,6 +26,8 @@ const Cart = () => {
                 <button className='buttonCart' onClick={() => aumentarPizza(pizza)}> + </button>
                 <button className='buttonCart' onClick={() => eliminarDelCart(pizza.id)}>Eliminar</button>
                 <p>Total: ${pizza.price * pizza.cant}</p>
+                {user ? ( <button> Pagar </button> ) : ( null )}
+                
             </div>
             ))
         )}

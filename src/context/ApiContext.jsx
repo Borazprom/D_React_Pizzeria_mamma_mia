@@ -6,15 +6,17 @@ const ApiProvider = ({children}) =>{
 
     const [pizzas, setPizzas] = useState([])
 
+    const url = import.meta.env.VITE_URL
     const info = async()=> {
-        const result = await fetch("http://localhost:5000/api/pizzas")
-        const data = await result.json()
+        const response = await fetch(url)
+        const data = await response.json()
         setPizzas(data)
     } 
 
     useEffect(() => {
         info()
     },[])
+
  return (
 
     <ApiContext.Provider value={{pizzas}}>

@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+// import UserContext from '../context/UserContext'
 
 const Register = () => {
 // Estados de los input
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [repeatPassword, setRepeatPassword] = useState('')
+// const {user } = useContext(UserContext)
 
 // Estados de los errores
 const [error, setError] = useState(false)

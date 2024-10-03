@@ -1,10 +1,21 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { NavLink } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
   const {total} = useContext(CartContext)
-  const token = false;
+  const {user} = useContext(UserContext)  //Token
+  const {logout} = useContext(UserContext)
+  const navigate = useNavigate()
+  const irALogin = ()=> {
+        navigate(`/login`)
+    }
+
+//   const setActiveClass = ({ isActive}) => (isActive ? "active" : "notActive")
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-success ">
@@ -24,15 +35,15 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarText">
             <div class="navbar-nav me-auto mb-2 mb-lg-0">
               <Link to="/"className="nav-link active m-1 btn bg-dark text-white">🍕Home</Link>
-              {token ? (
+              {user ? (
                 <>
-                  <Link to="/login" className="nav-link active m-1">🔒Logout</Link>
+                  <NavLink  onClick={()=> irALogin()} className="nav-link active m-1">🔓Profile</NavLink>
+                  <NavLink to="/login" className="nav-link active m-1" onClick={() => logout()}> 🔒Logout</NavLink>
                 </>
               ) : (
-                <>
-                  <Link to="/profile" className="nav-link active m-1">🔓Profile</Link>
-                  <Link to="/login" className="nav-link active m-1">🔐Login</Link>
-                  <Link to="/register" className="nav-link active m-1">🔐Register</Link>
+                  <>
+                  <NavLink to="/login" className="nav-link active m-1 setActiveClass" >🔐Login</NavLink>
+                  <NavLink to="/register" className="nav-link active m-1">🔐Register</NavLink>
                 </>
               )}
             </div>

@@ -2,12 +2,19 @@ import React, { useContext } from 'react'
 import { Button, CardFooter } from 'react-bootstrap'
 import Card  from 'react-bootstrap/Card'
 import { number } from '../utils/number'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import { ApiContext } from '../context/ApiContext'
 
 
 const CardPizza = ({pizza}) => {
     const { agregarPizza } = useContext(CartContext)
+    
+    const navigate = useNavigate()
+
+    const verProducto = (id)=> {
+        navigate(`/pizza/${id}`)
+    }
   return (
     <>
       <Card key={pizza.id} style={{ width: '500px', marginTop:'16px' }} className="card">
@@ -24,7 +31,7 @@ const CardPizza = ({pizza}) => {
                 <Card.Text className='price'>Precio: ${number(pizza.price)}</Card.Text>                 
             </Card.Body>
             <CardFooter className='cardFooter'>
-            <Button variant="outline-dark" ><Link to="/pizza">Ver mas</Link></Button>
+            <Button onClick={() => verProducto(pizza.id)} variant="outline-dark" >Ver mas</Button>
             <Button onClick={() => agregarPizza(pizza)}  variant="success">Añadir</Button>
             </CardFooter>
         </Card>

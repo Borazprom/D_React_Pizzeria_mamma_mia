@@ -10,11 +10,9 @@ const Home = () => {
 
   return (
     <div>
-        <div className='header'>
-            
+        <div className='header'>  
             <Header title="¡Pizzeria Mamma Mía!" 
-                        description="¡Tenemos las mejores pizzas que podras encontrar!"/>
-            
+                    description="¡Las mejores pizzas pal bajón!"/>    
         </div>
         <div className='pizzas'>
             {pizzas.map(pizza =>(

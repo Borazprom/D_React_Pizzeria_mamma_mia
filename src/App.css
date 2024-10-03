@@ -126,7 +126,29 @@
     border: 0px;
     margin: 1px;
 } 
- 
+.containerPizza{
+    display: flex;
+
+}
+.imagenPizza{
+    width: 720px;
+    margin: 50px 50px 150px 100px; 
+    border-radius: 5px;
+}
+.namePizza{
+    font-size: 80px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.textPizza{
+    font-size: 28px;
+    margin-right: 40px;
+}
+.pricePizza{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
 /* Footer */
 .footer{
    text-align: center;
