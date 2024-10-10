@@ -37,7 +37,7 @@ const Navbar = () => {
               <Link to="/"className="nav-link active m-1 btn bg-dark text-white">🍕Home</Link>
               {user ? (
                 <>
-                  <NavLink to="/profile"  onClick={()=> irALogin()} className="nav-link active m-1">🔓Profile</NavLink>
+                  <NavLink to="/profile" onClick={()=> irALogin()}   className="nav-link active m-1">🔓Profile</NavLink>
                   <NavLink to="/login" className="nav-link active m-1" onClick={() => logout()}> 🔒Logout</NavLink>
                 </>
               ) : (

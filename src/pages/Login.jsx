@@ -4,33 +4,52 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
 const Login = () => {
-    const {handleSubmit, setEmail, setPassword} = useContext(UserContext)
+    // const {handleSubmit, email, setEmail, password, setPassword} = useContext(UserContext)
 
-// const [email, setEmail] = useState('')
-// const [contraseña, setContraseña] = useState('')
+    const { login } = useContext(UserContext);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-const [errorLogin, setErrorLogin] = useState(false)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await login(email, password);
+            // Redirigir o mostrar un mensaje de éxito
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
 
-const [exitoLogin, setExitoLogin] = useState(false)
+// const [errorLogin, setErrorLogin] = useState(false)
+// const [exitoLogin, setExitoLogin] = useState(false)
 
 
-const validarLogin = (e) => {
-    e.preventDefault()
+// const validarLogin = (e) => {
+//     e.preventDefault()
 
-    if (email === '' || contraseña === '')
-    { setErrorLogin(true)
-        setExitoLogin(false)
-        return 
-    }
-    setErrorLogin(false)
-    setExitoLogin(true)
-    setEmail('')
-    setPassword('')
+//     if (email === '' || password === '')
+//     { setErrorLogin(true)
+//         setExitoLogin(false)
+//         return 
+//     }
+//     setErrorLogin(false)
+//     setExitoLogin(true)
+//     setEmail('')
+//     setPassword('')
 
-}
+// }
   return (
-    <div className='mainLogin' onSubmit={validarLogin}>
-      <form className="formulario">
+    
+    <div className='mainLogin' onSubmit={handleSubmit}>
+
+<form onSubmit={handleSubmit}>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+
+
+      <form className="formulario" onSubmit={handleSubmit}>
         <div className="form-group">
             <label>Email</label>
             <input
@@ -38,6 +57,7 @@ const validarLogin = (e) => {
             name="email"
             className="form-control"
             placeholder='Ingrese su Email'
+            required
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             />
@@ -50,8 +70,9 @@ const validarLogin = (e) => {
             name="contraseña"
             className="form-control"
             placeholder='Ingrese su contraseña'
+            required
             onChange={(e) => setPassword(e.target.value)}
-            value={contraseña}
+            value={password}
             />
         </div>
         {errorLogin ? <p className='errorLogin'>Todos los campos son obligatorios</p> : null}
@@ -65,3 +86,34 @@ const validarLogin = (e) => {
 }
 
 export default Login
+
+
+//Codigo chat gpt
+// import React, { useState } from 'react';
+// import { UserContext } from './UserContext';
+
+// const Login = () => {
+//     const { login } = useContext(UserContext);
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         try {
+//             await login(email, password);
+//             // Redirigir o mostrar un mensaje de éxito
+//         } catch (error) {
+//             console.error(error.message);
+//         }
+//     };
+
+//     return (
+//         <form onSubmit={handleSubmit}>
+//             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+//             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+//             <button type="submit">Login</button>
+//         </form>
+//     );
+// };
+
+// export default Login;

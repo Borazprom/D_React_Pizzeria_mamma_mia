@@ -1,59 +1,73 @@
-import { createContext, useState } from "react";
-
+import React, { createContext, useState, useContext } from 'react';
 
 export const UserContext = createContext();
 
-    const validarToken = localStorage.getItem("token") || null;
+const UserProvider = ({ children }) => {
+    const [token, setToken] = useState(null);
+    const [email, setEmail] = useState(null);
 
-    const UserProvider = ({children}) => {
-        const [token, setToken] = useState(validarToken);
-        const [email, setEmail] = useState('');
-        const [password, setPassword] = useState('');  
-        const [user, setUser] = useState("")   //Token
-
-        const handleSubmit = async (e) => {
-            e.preventDefault()
-            const response = await fetch("http://localhost:5000/api/auth/login", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
+    const login = async (email, password) => {
+        const response = await fetch('http://localhost:5000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                email,
-                password,
-            }),
-        })
+            body: JSON.stringify({ email, password }),
+        });
+
         const data = await response.json();
-
-        alert(data?.error || "Authentication successful!");
-        localStorage.setItem("token", data.token);
-        setToken(data.token || null);
-        setEmail(data.email)
+        if (response.ok) {
+            setToken(data.token);
+            setEmail(data.email);
+        } else {
+            throw new Error(data.message);
         }
+    };
 
-        const validar = async () => {
+    const register = async (email, password) => {
+        const response = await fetch('http://localhost:5000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            setToken(data.token);
+            setEmail(data.email);
+        } else {
+            throw new Error(data.message);
+        }
+    };
+
+    const logout = () => {
+        setToken(null);
+        setEmail(null);
+    };
+
+    const getProfile = async () => {
         const response = await fetch('http://localhost:5000/api/auth/me', {
-           headers: {
-             Authorization: `Bearer ${token}`,
-           },
-         });
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
 
-         const data = await response.json();
-        setUser(data.email);
-        return data;
-        };
-
-        const logout =() => {
-        localStorage.clear()
-        setUser(null)
-        setToken(null)
+        const data = await response.json();
+        if (response.ok) {
+            return data;
+        } else {
+            throw new Error(data.message);
         }
+    };
 
-        return(
-        <UserContext.Provider value={{token, setToken, logout, validar, setEmail user, setUser, setPassword, handleSubmit}}>
+    return (
+        <UserContext.Provider value={{ token, email, login, register, logout, getProfile }}>
             {children}
         </UserContext.Provider>
-        )
-}
+    );
+};
 
 export default UserProvider 
