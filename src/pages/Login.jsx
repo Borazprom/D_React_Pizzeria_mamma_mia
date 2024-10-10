@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../context/UserContext'
 
 const Login = () => {
-    
+    const {handleSubmit, setEmail, setPassword} = useContext(UserContext)
 
-const [email, setEmail] = useState('')
-const [contraseña, setContraseña] = useState('')
+// const [email, setEmail] = useState('')
+// const [contraseña, setContraseña] = useState('')
 
 const [errorLogin, setErrorLogin] = useState(false)
 
@@ -24,7 +25,7 @@ const validarLogin = (e) => {
     setErrorLogin(false)
     setExitoLogin(true)
     setEmail('')
-    setContraseña('')
+    setPassword('')
 
 }
   return (
@@ -49,7 +50,7 @@ const validarLogin = (e) => {
             name="contraseña"
             className="form-control"
             placeholder='Ingrese su contraseña'
-            onChange={(e) => setContraseña(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             value={contraseña}
             />
         </div>
